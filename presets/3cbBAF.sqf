@@ -11,7 +11,9 @@ FOB_box_typename = "B_Slingload_01_Cargo_F";								// This is the FOB as a cont
 FOB_truck_typename = "B_Truck_01_box_F";									// This is the FOB as a vehicle.																										Default is "B_Truck_01_box_F".
 Arsenal_typename = "B_supplyCrate_F";										// This is the virtual arsenal as portable supply crates.  																				Default is "B_supplyCrate_F".
 Respawn_truck_typename = "UK3CB_BAF_LandRover_Amb_FFR_Green_A_MTP";			// This is the mobile respawn (and medical) truck. 																						Default is "B_Truck_01_medical_F".
-huron_typename = "UK3CB_BAF_Merlin_HC3_18_MTP";								// This is Spartan 01, a multipurpose mobile respawn as a helicopter. 																	Default is "B_Heli_Transport_03_unarmed_F".
+huron_typename = "UK3CB_BAF_Merlin_HC3_18_MTP";								// This is Spartan 01, a multipurpose mobile respawn as a helicopter.                                                                   Default is "B_Heli_Transport_03_unarmed_F".
+plane_typename = "B_Plane_Fighter_01_F"; 							//carrier plane item.
+rover_typename = "UK3CB_BAF_LandRover_Hard_UN_A"; 														//carrier landrover for towing			
 opfor_ammobox_transport = "RHS_Ural_Open_MSV_01";							// Make sure this thing can transport ammo boxes (see box_transport_config in kp_liberation_config.sqf) otherwise things will break!	Default is "O_Truck_03_transport_F".
 crewman_classname = "UK3CB_BAF_Crewman_MTP";								// This defines the crew for vehicles. 																									Default is "B_crew_F".
 pilot_classname = "UK3CB_BAF_HeliPilot_Army_MTP";							// This defines the pilot for helicopters. 																								Default is "B_Helipilot_F".
@@ -89,7 +91,25 @@ light_vehicles = [
 ];
 
 heavy_vehicles = [
-
+	["rhsusf_m113_usarmy",200,40,100],
+	["rhsusf_m113_usarmy_MK19",200,60,100],
+	["rhsusf_m113_usarmy_medical",200,0,100],
+	["B_APC_Wheeled_01_cannon_F",200,75,125],
+	["I_APC_Wheeled_03_cannon_F",200,75,125],
+	["B_APC_Tracked_01_rcws_F",300,100,150],
+	["I_APC_tracked_03_cannon_F",300,150,150],
+	["RHS_M2A2_BUSKI_WD",300,200,150],
+	["RHS_M2A3_BUSKIII_wd",300,250,175],
+	["B_APC_Tracked_01_AA_F",300,250,175],
+	["RHS_M6_wd",300,250,175],
+	["B_MBT_01_cannon_F",400,300,200],
+	["I_MBT_03_cannon_F",400,300,200],
+	["rhsusf_m1a1aim_tuski_wd",400,350,225],
+	["B_MBT_01_TUSK_F",500,350,225],
+	["rhsusf_m1a2sep1tuskiiwd_usarmy",500,400,250],
+	["B_MBT_01_arty_F",600,1250,300],
+	["rhsusf_m109_usarmy",600,1250,300],
+	["B_MBT_01_mlrs_F",800,1750,400]
 ];
 
 air_vehicles = [
@@ -99,7 +119,7 @@ air_vehicles = [
 	["UK3CB_BAF_Wildcat_AH1_CAS_6C_MTP",275,200,150],					//Wildcat AH1 6 (CAS/AT)
 	["UK3CB_BAF_Wildcat_AH1_CAS_8C_MTP",275,200,150],					//Wildcat AH1 8 (CAS/AT)
 	["UK3CB_BAF_Apache_AH1_MTP",500,500,200],							//Apache AH 1 (Multi-Role)
-	["RHS_AH64D_wd",750,750,250],										//AH-64D (Multi-Role)
+	//["RHS_AH64D_wd",750,750,250],										//AH-64D (Multi-Role)
 	["RHS_UH60M",250,80,150],											//UH-60M
 	["RHS_UH60M_MEV2",300,0,150],										//UH-60M MEV2
 	["RHS_CH_47F_10",275,80,175],										//CH-47 Chinook (Armed)
@@ -108,14 +128,14 @@ air_vehicles = [
 	["B_UAV_02_dynamicLoadout_F",400,300,200],							//MQ-4A Greyhawk
 	["B_T_UAV_03_dynamicLoadout_F",450,500,250],						//MQ-12 Falcon
 	["B_UAV_05_F",500,500,200],											//UCAV Sentinel
-	["RHS_A10",1000,1000,400],											//A-10A (CAS)
+	["B_Plane_CAS_01_F",1000,1000,400],											//A-10A (CAS)
 	["FIR_F15C",1250,1250,450],											//F-15C Eagle
 	["FIR_F15D",1250,1250,450],											//F-15D Eagle
 	["FIR_F15E",1250,1500,450],											//F-15E Strike Eagle
 	["JS_JC_FA18E",1500,1750,450],										//F/A-18 E Super Hornet
 	["JS_JC_FA18F",1500,1750,450],										//F/A-18 F Super Hornet
-	["B_Plane_Fighter_01_F",1500,1750,450],								//F/A-181 Black Wasp II
-	["B_Plane_Fighter_01_Stealth_F",1500,1750,450],						//F/A-181 Black Wasp II (Stealth)
+	//["B_Plane_Fighter_01_F",1500,1750,450],								//F/A-181 Black Wasp II
+	//["B_Plane_Fighter_01_Stealth_F",1500,1750,450],						//F/A-181 Black Wasp II (Stealth)
 	["B_T_VTOL_01_armed_F",750,1500,500],								//V-44 X Blackfish (Armed)
 	["B_T_VTOL_01_infantry_F",750,0,500],								//V-44 X Blackfish (Infantry)
 	["B_T_VTOL_01_vehicle_F",750,0,500]									//V-44 X Blackfish (Vehicle)
@@ -240,7 +260,10 @@ support_vehicles = [
 	["rhsusf_M977A4_AMMO_BKIT_usarmy_wd",125,200,75],					//M977A4 Ammo
 	["B_Slingload_01_Repair_F",275,0,0],								//Huron Repair
 	["B_Slingload_01_Fuel_F",75,0,200],									//Huron Fuel
-	["B_Slingload_01_Ammo_F",75,200,0]									//Huron Ammo
+	["B_Slingload_01_Ammo_F",75,200,0],									//Huron Ammo
+	["UK3CB_BAF_Vehicles_Logistics_Point",100,100,0],						//vehicle cargo loading for 3cb
+	["UK3CB_BAF_Vehicles_Servicing_Aircraft_Point",250,250,250]						//vehicle ammo loading for 3cb
+	
 ];
 
 // All the UAVs must be declared here, otherwise there shall be UAV controlling issues. Namely: you won't be able to control them.
@@ -399,8 +422,11 @@ opfor_vehicles = [
 	"rhs_brm1k_vdv",													//BRM-1K
 	"rhs_zsu234_aa",													//ZSU-23-4V
 	"rhs_zsu234_aa",													//ZSU-23-4V
+	"O_APC_Tracked_02_AA_F",
 	"rhs_bmd4ma_vdv",													//BMD-4M (A)
-	"rhs_bmd4ma_vdv"													//BMD-4M (A)
+	"rhs_bmd4ma_vdv",													//BMD-4M (A)
+	"rhs_t90a_tv",
+	"rhs_t90a_tv"
 ];
 
 // All enemy vehicles that can spawn as sector defenders and patrols but at a lower enemy combat readiness (aggression levels).
@@ -423,8 +449,11 @@ opfor_battlegroup_vehicles = [
 	"rhs_brm1k_vdv",													//BRM-1K
 	"rhs_zsu234_aa",													//ZSU-23-4V
 	"rhs_zsu234_aa",													//ZSU-23-4V
+	"O_APC_Tracked_02_AA_F",
 	"rhs_bmd4ma_vdv",													//BMD-4M (A)
 	"rhs_bmd4ma_vdv",													//BMD-4M (A)
+	"rhs_t90a_tv",
+	"rhs_t90a_tv",
 	"RHS_Mi24P_AT_vvsc",												//Mi-24P (AT)
 	"RHS_Mi24V_AT_vvsc",												//Mi-24V (AT)
 	"RHS_Mi8mt_Cargo_vvsc",												//Mi-8MT (Cargo)
@@ -469,7 +498,9 @@ opfor_choppers = [
 // Enemy fixed-wings that will need to spawn in the air.
 opfor_air = [
 	"RHS_Su25SM_vvsc",													//Su-25
-	"RHS_Su25SM_KH29_vvsc"												//Su-25 (KH29)
+	"RHS_Su25SM_KH29_vvsc",												//Su-25 (KH29)
+	"O_Plane_Fighter_02_F"
+
 ];
 
 /*	- Other various mission classnames.
@@ -514,16 +545,17 @@ elite_vehicles = [
 	"UK3CB_BAF_Wildcat_AH1_CAS_6C_MTP",									//Wildcat AH1 6 (CAS/AT)
 	"UK3CB_BAF_Wildcat_AH1_CAS_8C_MTP",									//Wildcat AH1 8 (CAS/AT)
 	"UK3CB_BAF_Apache_AH1_MTP",											//Apache AH 1 (Multi-Role)
-	"RHS_AH64D_wd",														//AH-64D (Multi-Role)
+	//"RHS_AH64D_wd",														//AH-64D (Multi-Role)
 	"RHS_A10",															//A-10A (CAS)
 	"FIR_F15C",															//F-15C Eagle
 	"FIR_F15D",															//F-15D Eagle
 	"FIR_F15E",															//F-15E Strike Eagle
 	"JS_JC_FA18E",														//F/A-18 E Super Hornet
 	"JS_JC_FA18F",														//F/A-18 F Super Hornet
-	"B_Plane_Fighter_01_F",												//F/A-181 Black Wasp II
-	"B_Plane_Fighter_01_Stealth_F",										//F/A-181 Black Wasp II (Stealth)
-	"B_T_VTOL_01_armed_F"												//V-44 X Blackfish (Armed)
+	//"B_Plane_Fighter_01_F",												//F/A-181 Black Wasp II
+	//"B_Plane_Fighter_01_Stealth_F",										//F/A-181 Black Wasp II (Stealth)
+	"B_T_VTOL_01_armed_F",
+	"B_Plane_CAS_01_F"												//V-44 X Blackfish (Armed)
 ];
 
 if (KP_liberation_debug) then {private _text = format ["[KP LIBERATION] [DEBUG] Unit preset %1 intitialized for: %2", KP_liberation_preset, debug_source];_text remoteExec ["diag_log",2];};

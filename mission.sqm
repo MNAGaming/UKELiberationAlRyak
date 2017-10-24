@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=3226;
+		nextID=3243;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=401;
+		nextID=501;
 	};
 	class Camera
 	{
-		pos[]={6127.9067,84.508995,119.38902};
-		dir[]={-0.79308724,-0.27309403,0.54446703};
-		up[]={-0.2251462,0.96198684,0.1545666};
-		aside[]={0.5659821,8.4750354e-008,0.82442731};
+		pos[]={5917.8462,36.608089,237.52524};
+		dir[]={-0.1139008,-0.51772678,0.84800696};
+		up[]={-0.068921052,0.85552382,0.51313823};
+		aside[]={0.99117601,1.8630089e-006,0.13312438};
 	};
 };
 binarizationWanted=0;
@@ -68,13 +68,14 @@ addons[]=
 	"A3_Signs_F",
 	"UK3CB_BAF_Vehicles_Weapons_Editor",
 	"UK3CB_BAF_Units_Common_Editor",
-	"task_force_radio_items"
+	"task_force_radio_items",
+	"A3_Supplies_F_Heli_Slingload"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=16;
+		items=17;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -182,6 +183,13 @@ class AddonsMetaData
 			name="task_force_radio_items";
 			author="[TF]Nkey";
 			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+		};
+		class Item16
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -294,7 +302,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=478;
+		items=484;
 		class Item0
 		{
 			dataType="Marker";
@@ -3010,17 +3018,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5870.0815,23.518646,287.46994};
+				position[]={5774.8765,23.529348,288.89478};
 				angles[]={0,3.1317348,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				name="littlebird_0";
 			};
 			id=597;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=61.15255;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3050,17 +3058,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5970.0967,23.518646,292.37589};
-				angles[]={0,4.7025313,0};
+				position[]={5817.666,23.538683,286.46283};
+				angles[]={-0,4.7025313,-0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				name="huronspawn";
 			};
 			id=598;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=61.15255;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3090,17 +3098,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5857.082,23.518646,287.34167};
+				position[]={5761.877,23.52935,288.76651};
 				angles[]={0,3.1317348,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				name="littlebird_1";
 			};
 			id=599;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=61.15255;
+			atlOffset=1.9073486e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3130,7 +3139,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5844.082,23.518646,287.21338};
+				position[]={5748.877,23.52935,288.63821};
 				angles[]={0,3.1317348,0};
 			};
 			side="Empty";
@@ -3140,7 +3149,7 @@ class Mission
 			};
 			id=600;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=61.15255;
+			atlOffset=61.163254;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3170,18 +3179,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5963.1587,23.539345,224.1127};
+				position[]={5990.0171,20.337614,227.96065};
 				angles[]={0,4.7025313,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				name="base_boxspawn";
 			};
 			id=601;
 			type="Land_ClutterCutter_small_F";
-			atlOffset=0.026340485;
+			atlOffset=0.6130619;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24022,6 +24030,217 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item478
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5976.542,24.319374,287.76462};
+				angles[]={0,3.1964238,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="planespawn_0";
+			};
+			id=3226;
+			type="Land_ClutterCutter_small_F";
+			atlOffset=0.77726555;
+		};
+		class Item479
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5961.8159,24.291548,288.21771};
+				angles[]={0,3.1212318,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="planespawn_1";
+			};
+			id=3227;
+			type="Land_ClutterCutter_small_F";
+			atlOffset=0.74943924;
+		};
+		class Item480
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5888.9746,24.890747,292.50296};
+				angles[]={0,4.6820793,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=3228;
+			type="B_Slingload_01_Fuel_F";
+			atlOffset=61.162201;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item481
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5881.8618,24.888962,292.59653};
+				angles[]={-0,4.6820793,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=3229;
+			type="B_Slingload_01_Repair_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item482
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5875.2744,24.889912,292.46957};
+				angles[]={0,4.6820793,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="ammocrate";
+				disableSimulation=1;
+				dynamicSimulation=1;
+			};
+			id=3230;
+			type="B_Slingload_01_Ammo_F";
+			atlOffset=61.161777;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item483
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5901.1533,24.418678,291.46732};
+				angles[]={0,3.3148437,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="aclandyspawn";
+			};
+			id=3231;
+			type="Land_ClutterCutter_small_F";
+			atlOffset=0.89023209;
 		};
 	};
 	class Connections
