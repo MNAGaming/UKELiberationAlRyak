@@ -2,7 +2,7 @@
 
 # KP Liberation for ArmA 3
 
-## Current version : 0.955
+## Current version : 0.96
 
 [BI Forum Thread](https://forums.bistudio.com/topic/202711-mpcti-coop-liberation-continued/)
 
@@ -56,7 +56,7 @@ You can play every map without any mods (only the maps themself) if you set the 
 	* [RHS: Armed Forces of the Russian Federation](http://steamcommunity.com/sharedfiles/filedetails/?id=843425103)
 	* [RHS: United States Forces](http://steamcommunity.com/sharedfiles/filedetails/?id=843577117)
 	* Recommended for more enterable buildings on Chernarus
-		* [Open Chernarus Project with JBAD](http://steamcommunity.com/sharedfiles/filedetails/?id=786865959)
+		* [DonkeyPunch.INFO Open Chernarus Project](http://steamcommunity.com/sharedfiles/filedetails/?id=786777307)
 * Malden
 	* Nothing
 * Sahrani
@@ -160,7 +160,79 @@ class Missions
 
 ## Changelog
 
-### 0.955
+### 0.96 (in Development)
+* Added: BI Support System functionality. (Currently deactivated, as there are still issues in MP)
+	* Added: Parameter for access to the Support System -> Disabled, Commander, Whitelist, Everyone.
+	* Added: BI Artillery support for artillery vehicles and mortars (if built manned or AI ordered to get in as crew).
+	* Added: Players can request artillery support from players (generates task).
+* Added: Civil Reputation.
+	* Added: Config variables in `kp_liberation_config.sqf`.
+	* Added: Reputation penalty for killing civilians.
+	* Added: Reputation penalty for killing allied resistance fighters.
+	* Added: Reputation penalty for seizing civil vehicles.
+	* Added: Reputation penalty for destroyed/damaged civil buildings. (evaluated only on capture a sector event)
+	* Added: Mission parameter to choose building penalty for damaged or only destroyed buildings.
+	* Added: Reputation gain for liberated sectors.
+	* Added: After capturing a sector you might find wounded civilians. You can also gain reputation for offering medical support.
+* Added: Civil informant.
+	* Added: If you've a good reputation, a civil informant can rarely spawn at blufor sectors.
+	* Added: Intel increase, if you capture the informant and bring him back to a FOB.
+	* Added: There is a chance that an informant will reveal a time critical task to kill a HVT.
+* Added: Asymmetric Threats.
+	* Added: Possibility of IEDs in blufor sectors, if you have a bad civil reputation.
+	* Added: Own logistic convoys can be ambushed by guerilla forces.
+	* Added: Value for guerilla strength which will be affected by the events connected to guerilla forces.
+	* Added: Guerilla forces presets.
+	* Added: Dynamic guerilla forces equipment depending on their strength value.
+	* Added: Chance that guerilla forces will join the fight at a sector as friend or foe. (depends on reputation)
+	* Added: Possibility of a guerilla ambush in blufor sectors (additional to IEDs).
+* Added: Chinese Simplified localization. Thanks to [nercon](https://github.com/nercon)
+* Added: Automatic server restart script for dedicated servers. Thanks to [k4s0](https://github.com/k4s0)
+* Added: Settings in the mission parameters for particular debug messages.
+* Added: Factory map markers now indicate which production facilities are available there.
+* Added: LoW Civilians.
+* Added: LoW UAV backpacks to the default blacklist.
+* Added: LoW AL-6 Pelican UAV.
+* Added: Some of the new RHS vehicles.
+* Added: Turkish localization. Thanks to [Carbneth](https://github.com/Carbneth)
+* Added: Parameter to set a cooldown for using mobile respawns.
+* Updated: English ingame tutorial texts in stringtable. Thanks to [FatRefrigerator](https://github.com/FatRefrigerator)
+* Removed: Liberation skill handling of AI units, as BI do this good enough now concerning wounds, etc.
+* Removed: Vehicle explosion chance script for convoy ambush.
+* Removed: Old debug messages.
+* Tweaked: Terrain alignment will be persistent during repeat building of objects (like walls). Thanks to [veteran29](https://github.com/veteran29)
+* Tweaked: Some reordering of UI elements.
+* Tweaked: Localization support for the extended options menu. Thanks to [nercon](https://github.com/nercon)
+* Tweaked: Highlight color in production list changed to blue instead of misleading green.
+* Tweaked: Amounts of resources on each FOB and production site is now visible in logistic dropdown menu as `(Supplies/Ammo/Fuel)`.
+* Tweaked: Removed the logistic convoy cap of 26 (which was due to the alphabet).
+* Tweaked: Captured enemy vehicles are now also listed in the commanders zeus interface.
+* Tweaked: Cities won't be able to produce resources anymore.
+* Tweaked: IED count in cities, capitals and factories is now dependend on the civil reputation.
+* Tweaked: Corrected some strings in the stringtable.
+* Tweaked: Factories don't have all facilities from the start anymore. The facility they start with is set at campaign start.
+* Tweaked: Replaced all deprecated `BIS_fnc_selectRandom` with the engine solution `selectRandom`.
+* Tweaked: Server log will now contain the `[STATS]` message of all clients. (players and HCs)
+* Tweaked: Preset system split to select blufor, opfor, resistance and civilians independently. Thanks to [Applejakerie](https://github.com/Applejakerie)
+* Tweaked: Capitals, cities and factories are now basically guarded by "militia" forces. Switching to regular army if the enemy combat readiness is increased.
+* Tweaked: Static weapons array missed some weapons.
+* Tweaked: Civil vehicles are now saved at a FOB after they were seized by players.
+* Tweaked: Some small code optimizations and format corrections.
+* Fixed: Player got custom recoil and aiming coefficients on respawn.
+* Fixed: Rare script error on closing respawn screen directly after joining the mission.
+* Fixed: Players could deploy multiple FOBs when they selected deploy fast enough on the same container.
+* Fixed: It was possible to disassemble a mortar in preview.
+* Fixed: Preview vehicles could get saved if you shut down the mission right after canceling the build process or if you'd still the preview in front you.
+* Fixed: Small issues due to the default "hold fire" combat mode for AI.
+* Fixed: Single Infantry units weren't saved sometimes.
+* Fixed: Paratroopers got sometimes an attack helicopter instead of a transport helicopter.
+* Fixed: Rescue helipad blocked building in their near vicinity.
+* Fixed: MPKill Eventhandler issue when using ACE.
+* Fixed: Function to buy a logistic truck worked but caused an error in dedicated server environment.
+* Fixed: Couldn't build under powerlines.
+* Fixed: Items in backpack weren't checked by arsenal blacklist crawler.
+
+### 0.955 (24th June 2017)
 * Added: Some small aesthetic things for the buildlist
 * Added: Exception for TFAR items from the 1.0 Beta (it's TFAR_ and not tf_ in the classnames there)
 * Added: Malden missionfile. Thanks to [Applejakerie](https://github.com/Applejakerie)
@@ -171,7 +243,7 @@ class Missions
 * Fixed: Production and Logistic Overview wasn't usable in normal UI scale
 * Fixed: The RHS "Mk.V SOC" boat got no recycle action due to the mounted static weapons
 
-### 0.954
+### 0.954 (19th June 2017)
 * Added: Some small aesthetic things for the buildlist
 * Added: Transport configs for the unarmed Blackfish variants (can hold 5 crates). Thanks to [Applejakerie](https://github.com/Applejakerie)
 * Tweaked: Production dialog list entries are now color coded depending on the actual production
@@ -182,7 +254,7 @@ class Missions
 * Fixed: SDV was missing in the boats array to be able to place it on water
 * Fixed: H-Barrier classname changed from the protected to the public one
 
-### 0.953
+### 0.953 (12th June 2017)
 * Added: Action to stack and sort resources in storage areas
 * Updated: Italian localization. Thanks to [k4s0](https://github.com/k4s0)
 * Updated: German localization. (umlauts)
@@ -194,7 +266,7 @@ class Missions
 * Fixed: Error in production dialog due to wrong global variable
 * Fixed: Last two supply_vehicle elements weren't shown in the build menu
 
-### 0.952
+### 0.952 (4th June 2017)
 * Added: Action to push resource crates
 * Added: More transport configs for various vehicles. Thanks to [ChiefOwens](https://github.com/ChiefOwens)
 * Added: Some more vehicles from RHS to the presets
@@ -210,7 +282,7 @@ class Missions
 * Fixed: Start vehicles were spawning with items in the inventory
 * Fixed: Sometimes you couldn't slingload crates which were unloaded from a storage
 
-### 0.951
+### 0.951 (28th May 2017)
 * Added: Boats at the stern of the Freedom for amphibious insertion
 * Added: Transport configs for guerilla offroad and van
 * Added: Mission parameter to choose between arsenal with no restrictions at all or using the defined preset from `kp_liberation_config.sqf` (no restriction not recommended)
@@ -241,7 +313,7 @@ class Missions
 * Fixed: Exploit of build menu if UI was set to show global resources
 * Fixed: Build menu reloads constantly
 
-### 0.95
+### 0.95 (22th May 2017)
 * Added: New resource system
 * Added: Italian localization. Thanks to [k4s0](https://github.com/k4s0)
 * Added: Action to change alignment (up or terrain aligned) during placement of buildings
@@ -300,13 +372,13 @@ class Missions
 * Fixed: Slingloading while transport crates inside a helicopter causes the helicopter to slingload the loaded crates inside
 * Fixed: Some buildable paratroopers from some presets don't had a parachute
 
-### 0.94
+### 0.94 (20th March 2017)
 * Added: Tanoa missionfile and vanilla apex preset
 * Added: Custom made Chimera Base for Tanoa. Thanks to [jus61](https://github.com/jus61) for building it
 * Added: X-Cam-Taunus missionfile
 * Added: Custom made Chimera Base for X-Cam-Taunus. Thanks to [jus61](https://github.com/jus61) for building it
 * Added: Custom made Chimera Base for Chernarus. Thanks to [Enigma](http://steamcommunity.com/profiles/76561198052767508) for building it
-* Added: Arsenal whitelist preset system (change via kp_liberation_config.sqf)
+* Added: Arsenal whitelist preset system (change via `kp_liberation_config.sqf`)
 	* Use blacklist from unit preset (default)
 	* custom whitelist file
 	* KP Community Selection
@@ -315,6 +387,7 @@ class Missions
 	* RHS USAF with ACE3 and ACRE2
 * Removed: Dependencies on Takistan missionfile
 * Removed: Apex dependencies on Chernarus missionfile (custom chimera base had two apex rocks)
+* Removed: Apex dependencies on Taunus missionfile
 * Replaced: Old hostile markers (exclamation marks) with a unit count sensitive area marking system
 * Tweaked: Presets
 	* custom.sqf is now default (vanilla is a kind of legacy now)
@@ -324,7 +397,7 @@ class Missions
 * Fixed: Custom flag texture not applied after savegame load
 * Fixed: Mapmarker disable won't work
 
-### 0.931
+### 0.931 (10th March 2017)
 * Added: Takistan Missionfile
 * Added: Chernarus Missionfile
 * Added: RHS Takistan Classnames Preset (desert camo)
@@ -333,12 +406,12 @@ class Missions
 * Fixed: BI Revive Error
 * Fixed: Starting game with a prebuild FOB caused errors on Takistan
 
-### 0.93
-* Added: kp_liberation_config.sqf with some additional config values
+### 0.93 (7th March 2017)
+* Added: `kp_liberation_config.sqf` with some additional config values
 * Added: ACE support
 * Added: Fuel consumption script
 * Added: Preset system (will grow with more maps) to choose between different classnames_extension presets
-* Added: custom.sqf in the preset system, where you can adjust everything to your liking (like editing the old classnames_extension.sqf)
+* Added: `custom.sqf` in the preset system, where you can adjust everything to your liking (like editing the old `classnames_extension.sqf`)
 * Added: BI Revive System. Activate it via Parameters in the MP Lobby if you don't use ACE
 * Added: Option in the mission parameters to disable the whole mapmarkers and disable the function in the extended options for every player
 * Added: Ability to blacklist arsenal items

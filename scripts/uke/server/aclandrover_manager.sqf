@@ -46,7 +46,7 @@ while { true } do {
 	rover setDamage 0;
 	rover allowdamage true;
 
-	if (KP_liberation_debug) then {private _text = format ["[KP LIBERATION] [DEBUG] rover spawned by: %1", debug_source];_text remoteExec ["diag_log",2];};
+	//if (KP_liberation_debug) then {private _text = format ["[KP LIBERATION] [DEBUG] rover spawned by: %1", debug_source];_text remoteExec ["diag_log",2];};
 
 	if ( alive rover ) then {
 		

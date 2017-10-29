@@ -106,7 +106,7 @@ _trigger setTriggerStatements["{_x isKindOf 'B_Slingload_01_Ammo_F'} count thisL
 		plane2 setDamage 0;
 		plane2 allowdamage true;
 
-		if (KP_liberation_debug) then {private _text = format ["[KP LIBERATION] [DEBUG] plane2 spawned by: %1", debug_source];_text remoteExec ["diag_log",2];};
+		//if (KP_liberation_debug) then {private _text = format ["[KP LIBERATION] [DEBUG] plane2 spawned by: %1", debug_source];_text remoteExec ["diag_log",2];};
 
 		if ( alive plane2 ) then {
 
