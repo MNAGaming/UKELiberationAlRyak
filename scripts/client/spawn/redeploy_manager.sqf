@@ -37,6 +37,7 @@ while {true} do {
 	if (!GRLIB_fatigue) then {
 		player enableStamina false;
 	};
+	
 
 	createDialog "liberation_deploy";
 	deploy = 0;
@@ -249,4 +250,6 @@ while {true} do {
 			};
 		};
 	};*/
+
+	[] call compileFinal preprocessFileLineNumbers "scripts\uke\client\ukerespawnmanagerext.sqf";
 };
